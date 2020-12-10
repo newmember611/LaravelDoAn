@@ -23,10 +23,10 @@ class UserController extends Controller
                 ["id"=>4, "mininame" => "4", "username"=>"User 4", "password" => "qwerty", "status" => 1]
             ]
             ];*/
-            $data=["dsuser"=>UserModel::all()];    
+            $data=["user_models"=>UserModel::all()];    
         
 
-            return view('User.UserIndex', $data);
+            return view('UserIndex', $data);
     }
 
     /**
@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('User.UserCreate');
+        return view('UserCreate');
     }
 
     /**
@@ -55,7 +55,7 @@ class UserController extends Controller
 
         $sp->save(); //Lưu csdl
         $sp=["sp"=>UserModel::all()->last()]; //Lấy dòng cuối cùng trong bảng để hiện lên view
-        return view('User.UserInfo', $sp);  
+        return view('UserInfo', $sp);  
     }
 
     /**
@@ -68,7 +68,7 @@ class UserController extends Controller
     {
         //
         $user=["id" => $id, "mininame" => $id, "username" => "asd", "password" => "qwerty", "status" => 1];
-        return view("User.UserInfo", $user);
+        return view("UserInfo", $user);
     }
 
     /**
@@ -81,7 +81,7 @@ class UserController extends Controller
     {
         //
         $sp=["sp"=>UserModel::find($id)];
-        return view("User.UserEdit", $sp);
+        return view("UserEdit", $sp);
     }
 
     /**
@@ -99,7 +99,7 @@ class UserController extends Controller
         $sp->Status = $request->status;
         $sp->save(); //update csdl
         $sp=["sp"=>UserModel::all()->find($id)];
-        return view("User.UserInfo", $sp);
+        return view("UserInfo", $sp);
     }
 
     /**

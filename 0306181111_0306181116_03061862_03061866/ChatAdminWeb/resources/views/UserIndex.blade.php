@@ -61,13 +61,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($users as $user)
+                                        @foreach($user_models as $user)
                                         <tr>
                                                 
-                                                <td>{{$user["id"]}}</td>
-                                                <td><a target="_blank" href="{{route('user.show', $user['id'])}}" class="mr-2 bg-primary rounded-circle text-center text-uppercase d-inline-block">{{$user["mininame"]}}</a> <span class="text-pale-sky">{{$user["username"]}}</span>
+                                                <td>{{$user["Id"]}}</td>
+                                                <td><a target="_blank" href="{{route('user.show', $user['Id'])}}" class="mr-2 bg-primary rounded-circle text-center text-uppercase d-inline-block">{{$user["mininame"]}}</a> <span class="text-pale-sky">{{$user["Name"]}}</span>
                                                 </td>
-                                                <td>{{$user["password"]}}</td>
+                                                
+                                                <td>{{$user["Password"]}}</td>
                                                 <td><span class="label label-xl label-rounded label-danger"></span>
                                                 </td>
                                                 <td>
