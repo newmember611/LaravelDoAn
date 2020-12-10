@@ -65,7 +65,7 @@
                                         <tr>
                                                 
                                                 <td>{{$user["Id"]}}</td>
-                                                <td><a target="_blank" href="{{route('user.show', $user['Id'])}}" class="mr-2 bg-primary rounded-circle text-center text-uppercase d-inline-block">{{$user["mininame"]}}</a> <span class="text-pale-sky">{{$user["Name"]}}</span>
+                                                <td><a target="_blank" href="{{route('user.show', $user['Id'])}}" style="color: #333">{{$user["Name"]}}</a> 
                                                 </td>
                                                 
                                                 <td>{{$user["Password"]}}</td>

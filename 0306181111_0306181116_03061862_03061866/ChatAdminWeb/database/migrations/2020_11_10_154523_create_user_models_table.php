@@ -18,9 +18,7 @@ class CreateUserModelsTable extends Migration
             $table->string('Name',100);
             $table->string('Password',100);
             $table->boolean('Status');
-         
-
-            $table->softDeletes();
+        
 
         });
     }
