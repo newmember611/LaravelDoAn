@@ -17,8 +17,9 @@ class CreateUserModelsTable extends Migration
             $table->bigIncrements('Id');
             $table->string('Name',100);
             $table->string('Password',100);
+            $table->tinyInteger('Level');
             $table->boolean('Status');
-        
+            
 
         });
     }
