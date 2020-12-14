@@ -17,7 +17,6 @@ class UserSeeder extends Seeder
 	                'Name'=>'User '.$i,
 	                'Password'=>"CC",
 	                'Status'=>rand(0,1),
-	              
 	            ]);
 	        }
 
