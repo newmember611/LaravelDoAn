@@ -6,7 +6,7 @@ use Closure;
 use Auth;
 class checkAdminLogin
 {
-    /**
+/**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -20,17 +20,17 @@ class checkAdminLogin
         {
             $user = Auth::user();
             // nếu level =1 (admin), status = 1 (actived) thì cho qua.
-            if ($user->Level == 1 && $user->Status == 1 )
+            if ($user->level == 1 && $user->status == 1 )
             {
                 return $next($request);
             }
             else
             {
                 Auth::logout();
-                return redirect()->route('login.get');
+                return redirect()->route('getLogin');
             }
         } else
-            return redirect('/login');
+            return redirect('admincp/login');
 
     }
 }

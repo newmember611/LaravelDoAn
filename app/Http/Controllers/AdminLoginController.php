@@ -1,53 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
-// khai báo sử dụng loginRequest
-use App\Http\Requests\LoginRequest;
-use Auth;
-use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 class AdminLoginController extends Controller
 {
-
-    public function getLogin()
+    public function getcheck()
     {
-        if (Auth::check()) {
-            // nếu đăng nhập thàng công thì 
-            return redirect('welcome');
+        return view('auth.login');
+    }
+
+
+    public function check(Request $request)
+    {
+        $data = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        if (Auth::attempt($data)) {
+            return view('welcome');
         } else {
             return view('auth.login');
         }
-        
-
-    }
-
-    /**
-     * @param LoginRequest $request
-     * @return RedirectResponse
-     */
-    public function postLogin(LoginRequest $request)
-    {
-        $login = [
-            'Name' => $request->txtEmail,
-            'Password' => $request->txtPassword,
-            'Level' => 1,
-            'Status' => 1
-        ];
-        if (Auth::attempt($login)) {
-            return redirect('welcome');
-        } else {
-            return redirect()->back()->with('Status', 'Email hoặc Password không chính xác');
-        }
-    }
-
-    /**
-     * action admincp/logout
-     * @return RedirectResponse
-     */
-    public function getLogout()
-    {
-        Auth::logout();
-        return redirect()->route('login.get');
     }
 
 }
