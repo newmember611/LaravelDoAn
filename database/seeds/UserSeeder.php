@@ -11,13 +11,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-         for($i=1; $i<=10; $i++)
+         for($i=1; $i<=5; $i++)
 	        {
-	            DB::table('user_models')->insert([
+	            DB::table('user_model')->insert([
 	                'Name'=>'User '.$i,
-	                'Password'=>"CC",
-	                'Status'=>rand(0,1),
-	              
+                    'Password'=>"CC",
+                    'Email'=>"abc@gmail.com",
+                    'Status'=>1,
 	            ]);
 	        }
 

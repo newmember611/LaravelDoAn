@@ -25,7 +25,7 @@
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="../../assets/images/profile/profile.png" class="img-fluid rounded-circle" alt="">
+                                        <img src="../../assets/images/profile/{{$user['Img']}}" class="img-fluid rounded-circle" alt="">
                                     </div>
                                 </div>
                                 <div class="profile-info">

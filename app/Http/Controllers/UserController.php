@@ -40,11 +40,14 @@ class UserController extends Controller
     {
         $sp = new UserModel;
         $sp->Name = $request->name;
-        $sp->Password = brcypt($request->password);
-        $sp->Status = $request->status;
+        $sp->Email = $request->email;
+        $sp->PhoneNumber = $request->phonenumber;
+        $sp->Img = "profile.png";
+        $sp->Password = bcrypt($request->password);
+        $sp->Status = 1;
         $sp->save(); //Lưu csdl
         $sp=["user"=>UserModel::all()->last()]; //Lấy dòng cuối cùng trong bảng để hiện lên view
-        return view('UserInfo', $user);  
+        return view('UserInfo', $sp);  
     }
 
     /**
@@ -82,12 +85,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $temp = UserModel::find($id);
-        //dd($temp);
-        $temp->Name = $request->username;
-        $temp->Password = bcrypt($request->password);
-        $temp->Status = $request->status;
-        $temp->save(); //update csdl
+        $item = UserModel::find($id);
+        $item->Name = $request->Username;
+        $item->Email = $request->Email;
+        $item->Password = bcrypt($request->Password);
+        $item->PhoneNumber = $request->PhoneNumber;
+        $item->Img = $request->Img;
+        $item->Status = $request->Status;
+        $item->save();
         $info=["user"=>UserModel::find($id)];
         return view("UserInfo", $info);
     }

@@ -14,7 +14,7 @@ class AdminLoginController extends Controller
     public function check(Request $request)
     {
         $data = [
-            'name' => $request->name,
+            'email' => $request->email,
             'password' => $request->password,
         ];
 

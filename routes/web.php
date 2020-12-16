@@ -11,10 +11,10 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('auth.login');
 });
+
 
 Route::get('logintest', 'AdminLoginController@getcheck');
 Route::post('logintest', 'AdminLoginController@check');

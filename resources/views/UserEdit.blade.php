@@ -11,9 +11,17 @@
 				<input disabled value="{{$user['Id']}}" type="text" id="id" name="id" placeholder="id" title="Please enter your First Name" required="">
 			</div>
 			<div class="form-control w3layouts"> 
-				<input value="{{$user['Name']}}" type="text" id="firstname" name="username" placeholder="Username" title="Please enter your First Name" required="">
+				<input value="{{$user['Name']}}" type="text" id="firstname" name="Username" placeholder="Username" title="Please enter your First Name" required="">
 			</div>
-
+			<div class="form-control w3layouts"> 
+				<input value="{{$user['Email']}}" type="text" id="firstname" name="Email" placeholder="Username" title="Please enter your First Name" required="">
+			</div>
+			<div class="form-control w3layouts"> 
+				<input value="{{$user['PhoneNumber']}}" type="text" id="firstname" name="PhoneNumber" placeholder="Username" title="Please enter your First Name" required="">
+			</div>
+			<div class="form-control w3layouts"> 
+				<input value="{{$user['Img']}}" type="text" id="firstname" name="Img" placeholder="Username" title="Please enter your First Name" required="">
+			</div>
 			<div class="form-control agileinfo">	
 				<input value="{{$user['Password']}}" type="password" class="lock" name="password" placeholder="Password" id="password1" required="">
             </div>
