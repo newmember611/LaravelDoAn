@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 
 Route::get('logintest', 'AdminLoginController@getcheck');
@@ -22,3 +25,4 @@ Route::get('/user/create', "UserController@create")->name('user.create');
 Route::get('/user/{id}/edit', "UserController@edit")->name('user.edit');
 Route::get('/user/{id}', "UserController@show")->name('user.show');
 Route::patch('/user/{id}', "UserController@update")->name('user.update');
+
