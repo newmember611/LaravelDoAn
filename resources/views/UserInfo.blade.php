@@ -34,19 +34,19 @@
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-name">
-                                                        <h4 class="text-primary">{{$username}}</h4>
-                                                        <p>ID: {{$id}}</p>
+                                                        <h4 class="text-primary">{{$user['Name']}}</h4>
+                                                        <p>ID: {{$user['Id']}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-email">
-                                                        <h4 class="text-muted">{{$password}}</h4>
+                                                        <h4 class="text-muted">{{$user['Password']}}</h4>
                                                         <p>Password</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4 col-sm-4 prf-col">
                                                     <div class="profile-call">
-                                                        <h4 class="text-muted">{{$status}}</h4>
+                                                        <h4 class="text-muted">{{$user['Status']}}</h4>
                                                         <p>Status</p>
                                                     </div>
                                                 </div>

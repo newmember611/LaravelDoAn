@@ -25,6 +25,7 @@
                         <div class="card transparent-card">
                             <div class="card-header pb-0">
                                 <h4 class="card-title mt-2">UserBoard</h4>
+                                <a href="{{route('user.create')}}"><button type="submit" class="btn btn-outline-primary">Create</button></a>
                                 <div class="table-action float-sm-right mt-4 mt-sm-0">
                                     <form action="#">
                                         <div class="form-row">
@@ -72,8 +73,8 @@
                                                 <td><span class="label label-xl label-rounded label-danger"></span>
                                                 </td>
                                                 <td>
-                                                <a href="{{route('user.edit', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a>
-                                                <button type="submit" class="btn btn-outline-primary">Delete</button>
+                                                <a href="{{route('user.edit', $user['Id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a>
+                                                <button type="submit" class="btn btn-outline-primary">Deactive</button>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -21,7 +21,7 @@ class AdminLoginController extends Controller
         if (Auth::attempt($data)) {
             return view('welcome');
         } else {
-            return view('auth.login')
+            return view('auth.login');
         }
     }
 
