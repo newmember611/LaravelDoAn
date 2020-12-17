@@ -16,12 +16,13 @@ class AdminLoginController extends Controller
         $data = [
             'name' => $request->name,
             'password' => $request->password,
+            'email' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
         ];
 
         if (Auth::attempt($data)) {
             return view('welcome');
         } else {
-            return view('auth.login')
+            return view('auth.login');
         }
     }
 

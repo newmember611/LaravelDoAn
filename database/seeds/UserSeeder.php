@@ -15,7 +15,9 @@ class UserSeeder extends Seeder
 	        {
 	            DB::table('user_models')->insert([
 	                'Name'=>'User '.$i,
-	                'Password'=>"CC",
+                    'Password'=>"CC",
+                    'PhoneNumber' =>"0123456789",
+                    'Img' => "1.png",
 	                'Status'=>rand(0,1),
 	              
 	            ]);

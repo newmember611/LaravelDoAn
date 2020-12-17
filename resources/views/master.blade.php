@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
-    
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
