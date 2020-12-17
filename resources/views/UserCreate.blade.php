@@ -1,13 +1,12 @@
 @extends('master')
 @section('content')
+
 <div class="content-body">
 <div class="container-fluid">
-
-<!-- </div>
-<div class="form-row"> -->
 <form action="{{route('user.store')}}" method="POST">
 {{csrf_field()}}
-<div class="col-md-8 mb-3">
+
+    <div class="col-md-8 mb-3">
         <label for="validationCustom07">Username</label>
         <input type="text" name="name" min="20" class="form-control" id="validationCustom07" placeholder="Password" required>
         <div class="invalid-tooltip">
@@ -49,7 +48,8 @@
             Please provide a E-mail address.
         </div>
     </div>
-    </form>
+
+</form>
     </div>
     </div>
 </div>
