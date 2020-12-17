@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserModelsTable extends Migration
+class Messenges extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateUserModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_model', function (Blueprint $table) {
+        //
+        Schema::create('messenges', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Email', 100);
-            $table->string('Name',100);
-            $table->string('Password',100);
-            $table->Integer('PhoneNumber');
-            $table->boolean('Status');
-            $table->string('Img',100);
+            $table->Integer('User_id');
+            $table->Integer('Conversations_id');
+            $table->string('Messenges',500);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +31,6 @@ class CreateUserModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_models');
+        //
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddLevelStatusToUsersTable extends Migration
+class UserHasConversations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class AddLevelStatusToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('level')->after('password')->default(0);
-            $table->tinyInteger('status')->after('level')->default(0);
-       });
+        //
+        Schema::create('user_has_conversations', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->Integer('User_id');
+            $table->Integer('Conversations_id');
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -26,8 +30,6 @@ class AddLevelStatusToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('admin', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }

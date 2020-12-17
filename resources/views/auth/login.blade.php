@@ -128,12 +128,12 @@
 				</span>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-					<input class="input100" type="text" name="username" placeholder="username or email">
+					<input class="input100" type="text" name="email" placeholder="username or email">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-					<input class="input100" type="password" name="pass" placeholder="password">
+					<input class="input100" type="password" name="password" placeholder="password">
 					<span class="focus-input100"></span>
 				</div>
 

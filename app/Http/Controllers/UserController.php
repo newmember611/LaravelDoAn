@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserModel;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Http\Controllers\User;
+use App\Models;
 class UserController extends Controller
 {
     /**
@@ -15,18 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        /*$data=[
-            'users'=>[
-                ["id"=>1, "mininame" => "1", "username"=> "User 1", "password" => "qwerty", "status" => 1],
-                ["id"=>2, "mininame" => "2", "username"=>"User 2", "password" => "qwerty", "status" => 1],
-                ["id"=>3, "mininame" => "3", "username"=>"User 3", "password" => "qwerty", "status" => 1],
-                ["id"=>4, "mininame" => "4", "username"=>"User 4", "password" => "qwerty", "status" => 1]
-            ]
-            ];*/
-            $data=["user_models"=>UserModel::all()];    
-        
-
-            return view('UserIndex', $data);
+        $data=["user_models"=>UserModel::all()];    
+        return view('UserIndex', $data);
     }
 
     /**
@@ -39,6 +30,24 @@ class UserController extends Controller
         return view('UserCreate');
     }
 
+    public function deactive($id)
+    {
+        $user=["user"=>UserModel::find($id)];
+        return view("UserDeactive", $user);
+    }
+
+    public function update_deacive(Request $request)
+    {
+        $temp = UserModel::find($id);
+        // dd(temp);
+        // if($temp->Status == 1)
+        //     $temp->Status = 0;
+        // else
+            $temp->Status = 0;
+        $temp->save();
+        $info=["user"=>UserModel::find($id)];
+        return view("UserInfo", $info);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -49,12 +58,13 @@ class UserController extends Controller
     {
         $sp = new UserModel;
         $sp->Name = $request->name;
-        $sp->Password = $request->password;
-        $sp->Status = $request->status;
-       
-
+        $sp->Email = $request->email;
+        $sp->PhoneNumber = $request->phonenumber;
+        $sp->Img = "profile.png";
+        $sp->Password = bcrypt($request->password);
+        $sp->Status = 1;
         $sp->save(); //Lưu csdl
-        $sp=["sp"=>UserModel::all()->last()]; //Lấy dòng cuối cùng trong bảng để hiện lên view
+        $sp=["user"=>UserModel::all()->last()]; //Lấy dòng cuối cùng trong bảng để hiện lên view
         return view('UserInfo', $sp);  
     }
 
@@ -67,7 +77,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $user=["id" => $id, "mininame" => $id, "username" => "asd", "password" => "qwerty", "status" => 1];
+        $user=["user"=>UserModel::find($id)];
         return view("UserInfo", $user);
     }
 
@@ -80,8 +90,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $sp=["sp"=>UserModel::find($id)];
-        return view("UserEdit", $sp);
+        $user=["user"=>UserModel::find($id)];
+        return view("UserEdit", $user);
     }
 
     /**
@@ -93,13 +103,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $sp = UserModel::find($id);
-        $sp->Name = $request->name;
-        $sp->Password = $request->password;
-        $sp->Status = $request->status;
-        $sp->save(); //update csdl
-        $sp=["sp"=>UserModel::all()->find($id)];
-        return view("UserInfo", $sp);
+        $item = UserModel::find($id);
+        $item->Name = $request->Username;
+        $item->Email = $request->Email;
+        $item->Password = bcrypt($request->Password);
+        $item->PhoneNumber = $request->PhoneNumber;
+        $item->Img = $request->Img;
+        $item->Status = $request->Status;
+        $item->update();
+        $info=["user"=>UserModel::find($id)];
+        return view("UserInfo", $info);
     }
 
     /**
