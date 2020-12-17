@@ -15,7 +15,7 @@ class UserHasConversations extends Migration
     {
         //
         Schema::create('user_has_conversations', function (Blueprint $table) {
-            $table->bigIncrements('Id');
+            $table->bigIncrements('id');
             $table->Integer('User_id');
             $table->Integer('Conversations_id');
             $table->timestamps();

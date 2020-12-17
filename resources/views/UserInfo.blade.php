@@ -35,7 +35,7 @@
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-name">
                                                         <h4 class="text-primary">{{$user['Name']}}</h4>
-                                                        <p>ID: {{$user['Id']}}</p>
+                                                        <p>ID: {{$user['id']}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">

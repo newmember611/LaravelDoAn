@@ -30,6 +30,24 @@ class UserController extends Controller
         return view('UserCreate');
     }
 
+    public function deactive($id)
+    {
+        $user=["user"=>UserModel::find($id)];
+        return view("UserDeactive", $user);
+    }
+
+    public function update_deacive(Request $request)
+    {
+        $temp = UserModel::find($id);
+        // dd(temp);
+        // if($temp->Status == 1)
+        //     $temp->Status = 0;
+        // else
+            $temp->Status = 0;
+        $temp->save();
+        $info=["user"=>UserModel::find($id)];
+        return view("UserInfo", $info);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -92,7 +110,7 @@ class UserController extends Controller
         $item->PhoneNumber = $request->PhoneNumber;
         $item->Img = $request->Img;
         $item->Status = $request->Status;
-        $item->save();
+        $item->update();
         $info=["user"=>UserModel::find($id)];
         return view("UserInfo", $info);
     }

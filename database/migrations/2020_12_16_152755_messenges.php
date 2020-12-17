@@ -15,7 +15,7 @@ class Messenges extends Migration
     {
         //
         Schema::create('messenges', function (Blueprint $table) {
-            $table->bigIncrements('Id');
+            $table->bigIncrements('id');
             $table->Integer('User_id');
             $table->Integer('Conversations_id');
             $table->string('Messenges',500);

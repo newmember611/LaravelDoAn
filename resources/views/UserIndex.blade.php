@@ -43,15 +43,15 @@
                                         <tr>
                                                 
                                                 <td>{{$user["Id"]}}</td>
-                                                <td><a target="_blank" href="{{route('user.show', $user['Id'])}}" style="color: #333">{{$user["Name"]}}</a> 
+                                                <td><a target="_blank" href="{{route('user.show', $user['id'])}}" style="color: #333">{{$user["Name"]}}</a> 
                                                 </td>
                                                 
                                                 <td>{{$user["Password"]}}</td>
                                                 <td><span class="label label-xl label-rounded label-danger"></span>
                                                 </td>
                                                 <td>
-                                                <a href="{{route('user.edit', $user['Id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a>
-                                                <button type="submit" class="btn btn-outline-primary">Deactive</button>
+                                                <a href="{{route('user.edit', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a>
+                                                <a href="{{route('user.deactive', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Deactive</button>
                                                 </td>
                                             </tr>
                                         @endforeach
