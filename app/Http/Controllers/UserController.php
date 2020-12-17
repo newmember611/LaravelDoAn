@@ -30,21 +30,27 @@ class UserController extends Controller
         return view('UserCreate');
     }
 
-    public function deactive($id)
-    {
-        $user=["user"=>UserModel::find($id)];
-        return view("UserDeactive", $user);
-    }
+    // public function deactive($id)
+    // {
+    //     $user=["user"=>UserModel::find($id)];
+    //     return view("UserDeactive", $user);
+    // }
 
     public function updateDeactive(Request $request, $id)
     {
         $temp = UserModel::find($id);
-        $temp->Status = 0;
+        if($temp->Status == 1)
+        {
+            $temp->Status = 0;
+        }
+        else
+        {
+            $temp->Status = 1;
+        }
         $temp->update();
-        $info=["user"=>UserModel::find($id)];
-        return view("UserInfo", $info);
-
-        
+        $info=["user_models"=>UserModel::all()];
+        // return view("UserIndex", $info); 
+        return redirect()->route('user.index');
     }
     /**
      * Store a newly created resource in storage.
@@ -85,12 +91,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-        $user=["user"=>UserModel::find($id)];
-        return view("UserEdit", $user);
-    }
+    // public function edit($id)
+    // {
+    //     //
+    //     $user=["user"=>UserModel::find($id)];
+    //     return view("UserEdit", $user);
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -109,8 +115,8 @@ class UserController extends Controller
         $item->Img = $request->Img;
         $item->Status = $request->Status;
         $item->update();
-        $info=["user"=>UserModel::find($id)];
-        return view("UserInfo", $info);
+        // $info=["user"=>UserModel::find($id)];
+        return redirect()->route('user.index');
     }
 
     /**

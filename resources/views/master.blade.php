@@ -54,6 +54,7 @@
     <script src="../js/settings.js"></script>
     <script src="../js/gleek.js"></script>
     <script src="../js/styleSwitcher.js"></script>
+    <script sec="app.js"></script>
     
     <!-- Chartjs chart -->
     <script src="../../assets/plugins/chart.js/Chart.bundle.min.js"></script>

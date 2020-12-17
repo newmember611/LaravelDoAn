@@ -30,8 +30,8 @@ Route::patch('/user/{id}/update', "UserController@update")->name('user.update');
 Route::get('/user/{id}/edit', "UserController@edit")->name('user.edit');
 
 
-Route::patch('/user/{id}/updateDeactive', "UserController@updateDeactive")->name('user.updateDeactive');
-Route::get('/user/{id}/deactive', "UserController@deactive")->name('user.deactive');
+Route::patch('/user/{id}/deactive', "UserController@updateDeactive")->name('user.updateDeactive');
+// Route::get('/user/{id}/deactive', "UserController@deactive")->name('user.deactive');
 
 
 

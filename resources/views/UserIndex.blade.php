@@ -47,11 +47,103 @@
                                                 </td>
                                                 
                                                 <td>{{$user["Password"]}}</td>
-                                                <td><span class="label label-xl label-rounded label-danger"></span>
+
+                                                <td>
+                                                    @if($user['Status'] == 1)      
+                                                        <span class="label label-xl label-rounded label-success"></span>
+                                                    @else                                      
+                                                        <span class="label label-xl label-rounded label-danger"></span>
+                                                    @endif
                                                 </td>
                                                 <td>
-                                                <a href="{{route('user.edit', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a>
-                                                <a href="{{route('user.deactive', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Deactive</button>
+                                                <!-- <a href="{{route('user.edit', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a> -->
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                                                Edit
+                                                </button>
+
+                                                <!-- Modal edit -->
+                                                <form action="{{route('user.update', $user['id'])}}" method="POST">
+                                                {{csrf_field()}}
+    	                                        {{ method_field('PATCH') }}
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                    <div class="form-control w3layouts"> 
+                                                        <input disabled value="{{$user['id']}}" type="text" id="id" name="id" placeholder="id" title="Please enter your First Name" required="">
+                                                    </div>
+                                                    <div class="form-control w3layouts"> 
+                                                        <input value="{{$user['Name']}}" type="text" id="firstname" name="Username" placeholder="Username" title="Please enter your First Name" required="">
+                                                    </div>
+                                                    <div class="form-control w3layouts"> 
+                                                        <input value="{{$user['Email']}}" type="text" id="firstname" name="Email" placeholder="Username" title="Please enter your First Name" required="">
+                                                    </div>
+                                                    <div class="form-control w3layouts"> 
+                                                        <input value="{{$user['PhoneNumber']}}" type="text" id="firstname" name="PhoneNumber" placeholder="Username" title="Please enter your First Name" required="">
+                                                    </div>
+                                                    <div class="form-control w3layouts"> 
+                                                        <input value="{{$user['Img']}}" type="text" id="firstname" name="Img" placeholder="Username" title="Please enter your First Name" required="">
+                                                    </div>
+                                                    <div class="form-control agileinfo">	
+                                                        <input value="{{$user['Password']}}" type="password" class="lock" name="Password" placeholder="Password" id="password1" required="">
+                                                    </div>
+                                                    <div class="form-control agileinfo">	
+                                                        <input value="{{$user['Status']}}" type="number" class="lock" name="Status" placeholder="status" id="password1" required="">
+                                                    </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                </form>
+                                                <!--End modal-->
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Deactive</button>
+
+                                                <!-- Modal deactive -->
+                                                <form action="{{route('user.updateDeactive', $user['id'])}}" method="POST">
+                                                {{csrf_field()}}
+                                                {{ method_field('PATCH') }}
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Deactive</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Bạn muốn thay đổi trạng thái của tài khoản này?</p>
+                                                        <p>Trạng thái hiện tại: </p>
+                                                        @if($user['Status'] == 1)
+                                                        {
+                                                            <span>Đang hoạt động</span>
+                                                        }
+                                                        @else
+                                                        {
+                                                            <span>Đã khóa</span>
+                                                        }
+                                                        @endif
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                </form>
+                                                <!--End modal-->
                                                 </td>
                                             </tr>
                                         @endforeach
