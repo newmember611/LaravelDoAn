@@ -25,29 +25,7 @@
                         <div class="card transparent-card">
                             <div class="card-header pb-0">
                                 <h4 class="card-title mt-2">UserBoard</h4>
-                                <div class="table-action float-sm-right mt-4 mt-sm-0">
-                                    <form action="#">
-                                        <div class="form-row">
-                                            <div class="form-group mr-3">
-                                                <select class="selectpicker show-tick" data-width="auto">
-                                                    <option selected="selected">Russia</option>
-                                                    <option>USA</option>
-                                                    <option>Canada</option>
-                                                    <option>Australia</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="selectpicker show-tick" data-width="auto">
-                                                    <option selected="selected">Last 30 Days</option>
-                                                    <option>Last 1 MOnth</option>
-                                                    <option>Last 6 MOnth</option>
-                                                    <option>Last Year</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
+                                <a href="{{route('user.create')}}"><button type="submit" class="btn btn-outline-primary">Create</button></a>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
@@ -65,7 +43,7 @@
                                         <tr>
                                                 
                                                 <td>{{$user["Id"]}}</td>
-                                                <td><a target="_blank" href="{{route('user.show', $user['Id'])}}" class="mr-2 bg-primary rounded-circle text-center text-uppercase d-inline-block">{{$user["mininame"]}}</a> <span class="text-pale-sky">{{$user["Name"]}}</span>
+                                                <td><a target="_blank" href="{{route('user.show', $user['id'])}}" style="color: #333">{{$user["Name"]}}</a> 
                                                 </td>
                                                 
                                                 <td>{{$user["Password"]}}</td>
@@ -73,14 +51,12 @@
                                                 </td>
                                                 <td>
                                                 <a href="{{route('user.edit', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a>
-                                                <button type="submit" class="btn btn-outline-primary">Delete</button>
+                                                <a href="{{route('user.deactive', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Deactive</button>
                                                 </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
-                                    </table>
-                                                <button type="submit" class="btn btn-outline-primary">Create</button>
-                                                
+                                    </table>                       
                                 </div>
                                 <nav>
                                     <ul class="pagination pagination-rounded pagination-md justify-content-end">

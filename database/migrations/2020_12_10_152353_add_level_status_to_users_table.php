@@ -26,7 +26,7 @@ class AddLevelStatusToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('admin', function (Blueprint $table) {
             //
         });
     }

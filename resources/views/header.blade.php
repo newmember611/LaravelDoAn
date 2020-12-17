@@ -132,7 +132,7 @@
                         </li>
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
-                                <img src="../../assets/images/avatar/1.jpg" alt=""> <span>{{Auth::user()->name}}</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                                <img src="../../assets/images/avatar/1.jpg" alt=""> <span>{{ Auth::user()->name }} </span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                             </a>
                             <div class="drop-down dropdown-profile animated bounceInDown">
                                 <div class="dropdown-content-body">

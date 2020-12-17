@@ -13,15 +13,16 @@ class CreateUserModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_models', function (Blueprint $table) {
-            $table->bigIncrements('Id');
+        Schema::create('user_model', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('Email', 100);
             $table->string('Name',100);
             $table->string('Password',100);
+            $table->Integer('PhoneNumber');
             $table->boolean('Status');
-         
-
+            $table->string('Img',100);
+            $table->timestamps();
             $table->softDeletes();
-
         });
     }
 

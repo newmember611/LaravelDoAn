@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
+use DB;
 class AdminLoginController extends Controller
+
 {
     public function getcheck()
     {
@@ -14,9 +16,9 @@ class AdminLoginController extends Controller
     public function check(Request $request)
     {
         $data = [
-            'name' => $request->name,
+            'email' => $request->email,
             'password' => $request->password,
-            'email' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
+            'name' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
         ];
 
         if (Auth::attempt($data)) {
