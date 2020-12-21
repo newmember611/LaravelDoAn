@@ -61,7 +61,7 @@
                                                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
                                                 Edit
                                                 </button>
-
+                                                </td>
                                                 <!-- Modal edit -->
                                                 <form action="{{route('user.update', $user['id'])}}" method="POST">
                                                 {{csrf_field()}}
@@ -76,27 +76,41 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                    <div class="form-control w3layouts"> 
-                                                        <input disabled value="{{$user['id']}}" type="text" id="id" name="id" placeholder="id" title="Please enter your First Name" required="">
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">ID</label>
+                                                        <input  disabled value="{{$user['id']}}" type="text" id="id" name="id" placeholder="id" title="Please enter your First Name" required=""> 
                                                     </div>
-                                                    <div class="form-control w3layouts"> 
-                                                        <input value="{{$user['Name']}}" type="text" id="firstname" name="Username" placeholder="Username" title="Please enter your First Name" required="">
+                                                    
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">Name</label>
+                                                        <input  value="{{$user['Name']}}" type="text" id="firstname" name="Username" placeholder="Username" title="Please enter your First Name" required=""> 
                                                     </div>
-                                                    <div class="form-control w3layouts"> 
-                                                        <input value="{{$user['Email']}}" type="text" id="firstname" name="Email" placeholder="Username" title="Please enter your First Name" required="">
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">Email</label>
+                                                        <input  value="{{$user['Email']}}" type="text" id="firstname" name="Email" placeholder="Username" title="Please enter your First Name" required="">
                                                     </div>
-                                                    <div class="form-control w3layouts"> 
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">PhoneNumber</label>
                                                         <input value="{{$user['PhoneNumber']}}" type="text" id="firstname" name="PhoneNumber" placeholder="Username" title="Please enter your First Name" required="">
                                                     </div>
-                                                    <div class="form-control w3layouts"> 
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">Img</label>
                                                         <input value="{{$user['Img']}}" type="text" id="firstname" name="Img" placeholder="Username" title="Please enter your First Name" required="">
                                                     </div>
-                                                    <div class="form-control agileinfo">	
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">Password</label>	
                                                         <input value="{{$user['Password']}}" type="password" class="lock" name="Password" placeholder="Password" id="password1" required="">
                                                     </div>
-                                                    <div class="form-control agileinfo">	
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">Status</label>	
                                                         <input value="{{$user['Status']}}" type="number" class="lock" name="Status" placeholder="status" id="password1" required="">
                                                     </div>
+
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -106,9 +120,10 @@
                                                 </div>
                                                 </div>
                                                 </form>
+                                                <td>
                                                 <!--End modal-->
                                                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Deactive</button>
-
+                                                </td>
                                                 <!-- Modal deactive -->
                                                 <form action="{{route('user.updateDeactive', $user['id'])}}" method="POST">
                                                 {{csrf_field()}}
@@ -144,7 +159,7 @@
                                                 </div>
                                                 </form>
                                                 <!--End modal-->
-                                                </td>
+                                                
                                             </tr>
                                         @endforeach
                                         </tbody>
