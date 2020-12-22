@@ -107,13 +107,13 @@
                                                 </div>
                                                 </form>
                                                 <!--End modal-->
-                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Deactive</button>
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#deactive">Deactive</button>
 
                                                 <!-- Modal deactive -->
                                                 <form action="{{route('user.updateDeactive', $user['id'])}}" method="POST">
                                                 {{csrf_field()}}
                                                 {{ method_field('PATCH') }}
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="deactive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                     <div class="modal-header">
