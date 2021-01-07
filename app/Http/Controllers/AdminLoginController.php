@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Auth;
-use DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class AdminLoginController extends Controller
 
 {
@@ -18,9 +18,8 @@ class AdminLoginController extends Controller
         $data = [
             'email' => $request->email,
             'password' => $request->password,
-            'name' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
+            //'name' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
         ];
-
         if (Auth::attempt($data)) {
             return view('welcome');
         } else {
