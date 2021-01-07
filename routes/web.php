@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('logintest', 'AdminLoginController@getcheck');
 Route::post('logintest', 'AdminLoginController@check');
+Route::get('logout', 'AdminLoginController@logout')->name('admin.logout');
 
 //USER
 Route::get('/user', "UserController@index")->name('user.index');
