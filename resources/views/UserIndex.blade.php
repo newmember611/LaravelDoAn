@@ -3,7 +3,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
+        <div class="content-body" style="padding: 0 2vw;">
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col p-md-0">
@@ -58,15 +58,7 @@
                                         </tbody>
                                     </table>                       
                                 </div>
-                                <nav>
-                                    <ul class="pagination pagination-rounded pagination-md justify-content-end">
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
-                                        <li class="page-item active"><a class="page-link" href="javascript:void()">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">5</a></li>
-                                    </ul>
-                                </nav>
+                                
                             </div>
                         </div>
                     </div>

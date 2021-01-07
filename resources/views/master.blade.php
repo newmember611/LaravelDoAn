@@ -37,7 +37,7 @@
             
         @yield('content')
             
-        @include('footer')
+        
         @include('right_sidebar')
         
         

@@ -36,7 +36,7 @@ class UserController extends Controller
         return view("UserDeactive", $user);
     }
 
-    public function updateDeacive(Request $request)
+    public function updateDeactive(Request $request)
     {
         $temp = UserModel::find($id);
       
