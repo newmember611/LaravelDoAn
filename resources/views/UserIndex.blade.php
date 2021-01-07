@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
         <!--**********************************
             Content body start
         ***********************************-->
@@ -42,23 +43,26 @@
                                         @foreach($user_models as $user)
                                         <tr>
                                                 
-                                                <td>{{$user["Id"]}}</td>
+                                                <td id="vid">{{$user["id"]}}</td>
                                                 <td><a target="_blank" href="{{route('user.show', $user['id'])}}" style="color: #333">{{$user["Name"]}}</a> 
                                                 </td>
                                                 
                                                 <td>{{$user["Password"]}}</td>
 
                                                 <td>
+                                                    <div id="statusdeactive_{{$user['id']}}"> 
                                                     @if($user['Status'] == 1)      
                                                         <span class="label label-xl label-rounded label-success"></span>
                                                     @else                                      
                                                         <span class="label label-xl label-rounded label-danger"></span>
                                                     @endif
+                                                    </div>
+                                                    
                                                 </td>
                                                 <td>
                                                 <!-- <a href="{{route('user.edit', $user['id'])}}"><button type="submit" class="btn btn-outline-primary">Edit</button></a> -->
                                                 <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal_{{$user['id']}}">
                                                 Edit
                                                 </button>
 
@@ -66,7 +70,7 @@
                                                 <form action="{{route('user.update', $user['id'])}}" method="POST">
                                                 {{csrf_field()}}
     	                                        {{ method_field('PATCH') }}
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="exampleModal_{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                     <div class="modal-header">
@@ -107,13 +111,13 @@
                                                 </div>
                                                 </form>
                                                 <!--End modal-->
-                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#deactive">Deactive</button>
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#deactive_{{$user['id']}}">Deactive</button>
 
                                                 <!-- Modal deactive -->
-                                                <form action="{{route('user.updateDeactive', $user['id'])}}" method="POST">
+                                                <form>
                                                 {{csrf_field()}}
                                                 {{ method_field('PATCH') }}
-                                                <div class="modal fade" id="deactive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="deactive_{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                     <div class="modal-header">
@@ -122,7 +126,7 @@
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">
+                                                    <div id="contentdeactive_{{$user['id']}}" class="modal-body">
                                                         <p>Bạn muốn thay đổi trạng thái của tài khoản này?</p>
                                                         <p>Trạng thái hiện tại: </p>
                                                         @if($user['Status'] == 1)
@@ -137,7 +141,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        <button id="deactivebutton" data-id="{{$user['id']}}" type="button" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
                                                     </div>
                                                     </div>
                                                 </div>
@@ -168,4 +172,7 @@
         <!--**********************************
             Content body end
         ***********************************-->
+        <script>
+
+        </script>
 @endsection
