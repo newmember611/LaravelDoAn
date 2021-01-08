@@ -54,6 +54,7 @@
     <script src="../js/settings.js"></script>
     <script src="../js/gleek.js"></script>
     <script src="../js/notify.min.js"></script>
+    <script src="../js/prettify.js"></script>
     <script src="../js/styleSwitcher.js"></script>
     <script sec="app.js"></script>
     
