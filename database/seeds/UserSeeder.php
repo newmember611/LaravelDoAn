@@ -15,9 +15,11 @@ class UserSeeder extends Seeder
 	        {
 	            DB::table('user_model')->insert([
 	                'Name'=>'User '.$i,
-                    'Password'=>"CC",
-                    'Email'=>"abc@gmail.com",
+                    'Password'=>"123",
+                    'Email'=>$i."@gmail.com",
+                    'PhoneNumber'=>'123400000',
                     'Status'=>1,
+                    'Img'=>'1',
 	            ]);
 	        }
 

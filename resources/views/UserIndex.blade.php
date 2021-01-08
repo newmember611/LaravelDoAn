@@ -4,7 +4,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
+        <div class="content-body" style="padding: 0 2vw;">
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col p-md-0">
@@ -115,8 +115,6 @@
 
                                                 <!-- Modal deactive -->
                                                 <form>
-                                                {{csrf_field()}}
-                                                {{ method_field('PATCH') }}
                                                 <div class="modal fade" id="deactive_{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -126,9 +124,9 @@
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div id="contentdeactive_{{$user['id']}}" class="modal-body">
+                                                    <div class="modal-body">
                                                         <p>Bạn muốn thay đổi trạng thái của tài khoản này?</p>
-                                                        <p>Trạng thái hiện tại: </p>
+                                                        <p id="contentdeactive_{{$user['id']}}">Trạng thái hiện tại: </p>
                                                         @if($user['Status'] == 1)
                                                         {
                                                             <span>Đang hoạt động</span>
@@ -141,7 +139,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button id="deactivebutton" data-id="{{$user['id']}}" type="button" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
+                                                        <button name="deactivebutton" data-id="{{$user['id']}}" type="button" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
                                                     </div>
                                                     </div>
                                                 </div>
@@ -154,15 +152,7 @@
                                         </tbody>
                                     </table>                       
                                 </div>
-                                <nav>
-                                    <ul class="pagination pagination-rounded pagination-md justify-content-end">
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
-                                        <li class="page-item active"><a class="page-link" href="javascript:void()">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript:void()">5</a></li>
-                                    </ul>
-                                </nav>
+                                
                             </div>
                         </div>
                     </div>

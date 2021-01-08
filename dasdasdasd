@@ -1,0 +1,19 @@
+[33m32ada5f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: commit (merge): git pull from TruongDat branch
+[33ma205ed9[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: checkout: moving from TruongDat to master
+[33m36a1f9a[m[33m ([m[1;31morigin/TruongDat[m[33m, [m[1;32mTruongDat[m[33m)[m HEAD@{2}: commit: nothing
+[33m6d6c1bd[m HEAD@{3}: commit: cap nhat trang thai bang ajax
+[33m9f95e1f[m HEAD@{4}: commit: nothing
+[33mfa82258[m HEAD@{5}: checkout: moving from ThanhQuang to TruongDat
+[33m4789263[m[33m ([m[1;31morigin/ThanhQuang[m[33m, [m[1;32mThanhQuang[m[33m)[m HEAD@{6}: checkout: moving from TruongDat to ThanhQuang
+[33mfa82258[m HEAD@{7}: commit: nnjjj
+[33ma1a1c02[m HEAD@{8}: commit: them modal deactive va edit
+[33m6075512[m HEAD@{9}: commit: fix deactive user
+[33mdcd1487[m HEAD@{10}: pull origin HuuHieu: Fast-forward
+[33m975d722[m HEAD@{11}: commit: fix edit user and add Deactive user
+[33mfbaa003[m HEAD@{12}: commit (merge): them model Conversations, User_has_conversations. Create user
+[33m66cd2bb[m HEAD@{13}: commit: pull from HuuHieu
+[33m4125334[m HEAD@{14}: commit: fix route
+[33m40c76ca[m[33m ([m[1;31morigin/ThanhTai[m[33m)[m HEAD@{15}: pull: Fast-forward
+[33m4789263[m[33m ([m[1;31morigin/ThanhQuang[m[33m, [m[1;32mThanhQuang[m[33m)[m HEAD@{16}: checkout: moving from master to TruongDat
+[33ma205ed9[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{17}: commit: fix route default
+[33m40c76ca[m[33m ([m[1;31morigin/ThanhTai[m[33m)[m HEAD@{18}: clone: from https://github.com/newmember611/LaravelDoAn.git

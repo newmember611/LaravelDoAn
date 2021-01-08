@@ -21,17 +21,17 @@ $.ajaxSetup({
         direction: "ltr" //"ltr" = Left to Right; "rtl" = Right to Left
     });
 
-    $('#deactivebutton').click(function () {
+    $('button[name=deactivebutton]').click(function () {
         var id = ($(this).attr('data-id'));
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         $.ajax({
             type: 'PATCH',  
             url: "/user/"+id+"/deactive",
-            // url: "{{route('user.updateDeavtice', "+id+")}}",
-            // data: {_token: CSRF_TOKEN, _method:"PATCH"},
             success: function(){
                 $("#statusdeactive_"+id).load(window.location.href + " #statusdeactive_"+id);
-                alert('success');
+                $("#contentdeactive_"+id).load(window.location.href + " #contentdeactive_"+id);
+                $.notify(
+                    "Success", "success" 
+                  );
             },
             error: function() {
                 $("#statusdeactive_"+id).load(window.location.href + " #statusdeactive_"+id);
