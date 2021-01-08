@@ -35,5 +35,14 @@ Route::patch('/user/{id}/updateDeactive', "UserController@updateDeactive")->name
 Route::get('/user/{id}/deactive', "UserController@deactive")->name('user.deactive');
 
 
+//MESSAGE
+Route::get('/message', "MesssageController@index")->name('msg.index');
+Route::post('/message', "MesssageController@store")->name('msg.store');
+Route::get('/message/create', "MesssageController@create")->name('msg.create');
+Route::get('/message/{id}', "MesssageController@show")->name('msg.show');
+Route::patch('/message/{id}/update', "MesssageController@update")->name('msg.update');
+Route::get('/message/{id}/edit', "MesssageController@edit")->name('msg.edit');
+
+
 
 
