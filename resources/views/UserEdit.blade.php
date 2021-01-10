@@ -1,5 +1,9 @@
 @extends('master')
 @section('content')
+
+<div class="content-body">
+<div class="container-fluid">
+
 <h1 class="w3ls">User Edit</h1>
 <div class="content-w3ls">
 	<div class="content-agile2">
@@ -33,4 +37,7 @@
 	</div>
 	<div class="clear"></div>
 </div>
+</div>
+</div>
+
 @endsection

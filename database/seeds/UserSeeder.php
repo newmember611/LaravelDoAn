@@ -14,10 +14,12 @@ class UserSeeder extends Seeder
          for($i=1; $i<=5; $i++)
 	        {
 	            DB::table('user_model')->insert([
-	                'Name'=>'User '.$i,
-                    'Password'=>"CC",
                     'Email'=>"abc@gmail.com",
-                    'Status'=>1,
+	                'Name'=>'User '.$i,
+                    'Password'=>"12345",
+                    'PhoneNumber'=>"321452121",
+                    'Status'=>1,	                
+	                'Img'=>"1.png",
 	            ]);
 	        }
 
