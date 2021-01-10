@@ -33,6 +33,10 @@ Route::get('/user/{id}/edit', "UserController@edit")->name('user.edit');
 Route::patch('/user/{id}/updateDeactive', "UserController@updateDeactive")->name('user.updateDeactive');
 Route::get('/user/{id}/deactive', "UserController@deactive")->name('user.deactive');
 
-
+Route::post('/userhaveconvation', "UserHaveConvationController@store")->name('userhaveconvation.store');
+Route::get('/userhaveconvation/create', "UserHaveConvationController@create")->name('userhaveconvation.create');
+Route::get('/userhaveconvation', "UserHaveConvationController@index")->name('userhaveconvation.index');
+Route::patch('/userhaveconvation/{id}/update', "UserHaveConvationController@update")->name('userhaveconvation.update');
+Route::get('/userhaveconvation/{id}/edit', "UserHaveConvationController@edit")->name('userhaveconvation.edit');
 
 
