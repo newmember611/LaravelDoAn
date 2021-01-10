@@ -110,7 +110,7 @@ class UserController extends Controller
         $item = UserModel::find($id);
         $item->Name = $request->Username;
         $item->Email = $request->Email;
-        $item->Password = bcrypt($request->Password);
+        $item->Password = $request->Password;
         $item->PhoneNumber = $request->PhoneNumber;
         $item->Img = $request->Img;
         $item->Status = $request->Status;

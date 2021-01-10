@@ -43,4 +43,28 @@ $.ajaxSetup({
         })
     });
 
+    $('button[name=editbutton]').click(function (){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var id = ($(this).attr('data-id'));
+        var username = $('#username_'+id).val();
+        var email = $('#email_'+id).val();
+        var phonenumber = $('#phone_'+id).val();
+        var img = $('#img_'+id).val();
+        var pass = $('#pass_'+id).val();
+        var status = $('#status_'+id).val();
+        $.ajax({
+            type: 'PATCH',  
+            url: "/user/"+id+"/update",
+            data: {_token: CSRF_TOKEN, Username: username, Email: email, Password: pass, PhoneNumber: phonenumber, Img: img, Status: status},
+            success: function(){
+                $("#editcontent").load(window.location.href + " #editcontent");
+                $.notify("Success", "success" );
+            },
+            error: function() {
+                $("#editcontent").load(window.location.href + " #editcontent");
+                $.notify("Success", "success" );
+            }
+        })
+    })
+
 })(jQuery);
