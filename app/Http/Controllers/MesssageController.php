@@ -17,6 +17,10 @@ class MesssageController extends Controller
     public function index()
     {
         $data = ["dataMessage"=>MessageModel::all()];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('MessageIndex', $data);
     }
 
@@ -27,6 +31,10 @@ class MesssageController extends Controller
      */
     public function create()
     {
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('MessageCreate');
     }
 
@@ -47,6 +55,10 @@ class MesssageController extends Controller
 
 
         $data = ["dataMessage"=>MessageModel::all()];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("MessageIndex", $data);
     }
 
@@ -59,6 +71,10 @@ class MesssageController extends Controller
     public function show($id)
     {
         $row = ["infoItem" => MessageModel::find($id)];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("MessageDetails", $row);
     }
 
@@ -71,6 +87,10 @@ class MesssageController extends Controller
     public function edit($id)
     {
         $row=["infoItem"=>MessageModel::find($id)];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("MessageEdit", $row);
     }
 
@@ -89,7 +109,10 @@ class MesssageController extends Controller
         $newRow->Messenges = $request->message;
         $newRow->Status = $request->status;
         $newRow->save();
-
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return redirect()->route('msg.index');
     }
 

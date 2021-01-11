@@ -15,6 +15,10 @@ class UserHaveConvationController extends Controller
     public function index()
     {
         $data=["user_has_conversations"=>User_has_ConversationsModel::all()];    
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('UserHaveConvationIndex', $data);
     }
 
@@ -25,6 +29,10 @@ class UserHaveConvationController extends Controller
      */
     public function create()
     {
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('UserHaveConvationCreate');
     }
 
@@ -40,6 +48,10 @@ class UserHaveConvationController extends Controller
         $sp->User_id = $request->User_id;
         $sp->Conversations_id = $request->Conversations_id;
         $sp->save(); //Lưu csdl
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return redirect('userhaveconvation');
     }
 
@@ -63,6 +75,10 @@ class UserHaveConvationController extends Controller
     public function edit($id)
     {
         $user=["user_has_conversations"=>User_has_ConversationsModel::find($id)];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("UserHaveConvationEdit", $user);
     }
 
@@ -79,6 +95,10 @@ class UserHaveConvationController extends Controller
         $item->User_id = $request->User_id;
         $item->Conversations_id = $request->Conversations_id;
         $item->update();
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return redirect('userhaveconvation');
         
     }

@@ -12,10 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+        if(!session()->has('data'))
+        {
+            return view('auth.login');
+        }
+        return view('welcome');
 });
-
-
 Route::get('logintest', 'AdminLoginController@getcheck');
 Route::post('logintest', 'AdminLoginController@check');
 Route::get('logout', 'AdminLoginController@logout')->name('admin.logout');

@@ -16,7 +16,12 @@ class UserController extends Controller
      */
     public function index()
     {
+
         $data=["user_models"=>UserModel::all()];    
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('UserIndex', $data);
     }
 
@@ -27,6 +32,10 @@ class UserController extends Controller
      */
     public function create()
     {
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('UserCreate');
     }
 
@@ -50,6 +59,10 @@ class UserController extends Controller
         $temp->update();
         $info=["user_models"=>UserModel::all()];
         // return view("UserIndex", $info); 
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return redirect()->route('user.index');
     }
     /**
@@ -69,6 +82,10 @@ class UserController extends Controller
         $sp->Status = 1;
         $sp->save(); //Lưu csdl
         $sp=["user"=>UserModel::all()->last()]; //Lấy dòng cuối cùng trong bảng để hiện lên view
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('UserInfo', $sp);  
     }
 
@@ -82,6 +99,10 @@ class UserController extends Controller
     {
         //
         $user=["user"=>UserModel::find($id)];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("UserInfo", $user);
     }
 

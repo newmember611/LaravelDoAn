@@ -10,12 +10,15 @@
     	{{ method_field('PATCH') }}
 
             <div class="form-control w3layouts"> 
+				<label>ID</label>
 				<input disabled value="{{$conversation['id']}}" type="text" id="id" name="id" placeholder="id" title="Please enter your First Name" required="">
 			</div>
 			<div class="form-control w3layouts"> 
+			<label>User One</label>
 				<input value="{{$conversation['User_one']}}" type="text"  name="one" placeholder="User One" title="Please enter your User One" required="">
 			</div>
 			<div class="form-control w3layouts"> 
+			<label>User Two</label>
 				<input value="{{$conversation['User_two']}}" type="text"name="two" placeholder="User Two" title="Please enter your User Two" required="">
 			</div>
             </div>

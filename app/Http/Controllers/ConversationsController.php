@@ -14,7 +14,11 @@ class ConversationsController extends Controller
      */
     public function index()
     {
-        $data=["conversation"=>ConversationsModel::all()];    
+        $data=["conversation"=>ConversationsModel::all()];  
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }  
         return view('ConversationsIndex', $data);
     }
 
@@ -26,6 +30,10 @@ class ConversationsController extends Controller
     public function create()
     {
         //
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view('ConversationsCreate');
     }
 
@@ -43,6 +51,10 @@ class ConversationsController extends Controller
         $sp->User_two = $request->two;
         $sp->save(); //Lưu csdl
         $sp=["conversation"=>ConversationsModel::all()->last()]; //Lấy dòng cuối cùng trong bảng để hiện lên view
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return redirect('conversations');
     }
 
@@ -56,6 +68,10 @@ class ConversationsController extends Controller
     {
         //Hiển thị tin nhắn
         $conversation=["conversation"=>ConversationsModel::find($id)];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("ConversationsInfo", $conversation);
     }
 
@@ -69,6 +85,10 @@ class ConversationsController extends Controller
     {
         //
         $user=["conversation"=>ConversationsModel::find($id)];
+        if(!session()->has('data'))
+        {
+            return redirect('logintest');
+        }
         return view("ConversationsEdit", $user);
     }
 
@@ -86,7 +106,11 @@ class ConversationsController extends Controller
         $item->User_one = $request->one;
         $item->User_two = $request->two;
         $item->update();
-        $info=["conversation"=>ConversationsModel::find($id)];
+       // $info=["conversation"=>ConversationsModel::find($id)];
+       if(!session()->has('data'))
+       {
+           return redirect('logintest');
+       }
         return redirect('conversations');
     }
 

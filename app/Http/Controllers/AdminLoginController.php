@@ -7,25 +7,32 @@ class AdminLoginController extends Controller
 {
     public function getcheck()
     {
-        return view('auth.login');
+        if(!session()->has('data'))
+        {
+            return view('auth.login');
+        }
+        return view('welcome');
     }
 
 
     public function check(Request $request)
     {
-        $data = [
+            $data = [
             'email' => $request->email,
             'password' => $request->password,
             //'name' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
         ];
         if (Auth::attempt($data)) {
+            $request->session()->put('data',$request->input());
             return view('welcome');
+        
         } else {
+
             return view('auth.login');
         }
     }
     public function logout() {
-        Auth::logout();
+        session()->forget('data');
         return view('auth.login');
     }
     
