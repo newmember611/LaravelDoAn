@@ -33,11 +33,12 @@
         @include('header')
 
         @include('left_sidebar')
-            
-        @yield('content')
-            
         
+        @yield('content')
+        
+        @include('footer')
         @include('right_sidebar')
+        
         
         
     </div>

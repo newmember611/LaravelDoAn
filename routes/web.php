@@ -52,5 +52,10 @@ Route::get('/conversations/{id}', "ConversationsController@show")->name('convers
 Route::patch('/conversations/{id}/update', "ConversationsController@update")->name('conversations.update');
 Route::get('/conversations/{id}/edit', "ConversationsController@edit")->name('conversations.edit');
 
+Route::post('/userhaveconvation', "UserHaveConvationController@store")->name('userhaveconvation.store');
+Route::get('/userhaveconvation/create', "UserHaveConvationController@create")->name('userhaveconvation.create');
+Route::get('/userhaveconvation', "UserHaveConvationController@index")->name('userhaveconvation.index');
+Route::patch('/userhaveconvation/{id}/update', "UserHaveConvationController@update")->name('userhaveconvation.update');
+Route::get('/userhaveconvation/{id}/edit', "UserHaveConvationController@edit")->name('userhaveconvation.edit');
 
 

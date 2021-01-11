@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
         <!--**********************************
             Content body start
         ***********************************-->
@@ -17,7 +18,7 @@
                         </ol>
                     </div>
                 </div>
-                <!-- row -->
+                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="profile">
