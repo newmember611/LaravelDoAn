@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-         for($i=1; $i<=5; $i++)
+         for($i=1; $i<=6; $i++)
 	        {
 	            DB::table('user_model')->insert([
 	                'Name'=>'User '.$i,
