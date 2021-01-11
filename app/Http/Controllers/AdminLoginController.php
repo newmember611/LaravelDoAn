@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 class AdminLoginController extends Controller
+
 {
     public function getcheck()
     {
@@ -16,9 +16,8 @@ class AdminLoginController extends Controller
         $data = [
             'email' => $request->email,
             'password' => $request->password,
-            // 'name' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
+            //'name' =>DB::table('users')->where('email',"=",$request->email)->select('name')->get()->get(0)->name
         ];
-        
         if (Auth::attempt($data)) {
             return view('welcome');
         } else {

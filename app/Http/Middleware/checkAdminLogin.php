@@ -31,6 +31,5 @@ class checkAdminLogin
             }
         } else
             return redirect('admincp/login');
-
     }
 }

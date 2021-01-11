@@ -9,8 +9,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    
+    <link href="../../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -54,7 +53,6 @@
     <script src="../js/settings.js"></script>
     <script src="../js/gleek.js"></script>
     <script src="../js/notify.min.js"></script>
-    <script src="../js/prettify.js"></script>
     <script src="../js/styleSwitcher.js"></script>
     <script sec="app.js"></script>
     
@@ -64,11 +62,11 @@
     <script src="../../assets/plugins/topojson/topojson.min.js"></script>
     <script src="../../assets/plugins/datamaps/datamaps.world.min.js"></script>
 
-    <script src="../js/plugins-init/datamap-world-init.js"></script>
+    <script src="../../js/plugins-init/datamap-world-init.js"></script>
 
     <script src="../../assets/plugins/datamaps/datamaps.usa.min.js"></script>
 
-    <script src="../js/dashboard/dashboard-1.js"></script>
+    <script src="../../js/dashboard/dashboard-1.js"></script>
 
-    <script src="../js/plugins-init/datamap-usa-init.js"></script>
+    <script src="../../js/plugins-init/datamap-usa-init.js"></script>
 </body>

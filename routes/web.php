@@ -44,5 +44,13 @@ Route::patch('/message/{id}/update', "MesssageController@update")->name('msg.upd
 Route::get('/message/{id}/edit', "MesssageController@edit")->name('msg.edit');
 
 
+Route::get('/conversations', "ConversationsController@index")->name('conversations.index');
+Route::post('/conversations', "ConversationsController@store")->name('conversations.store');
+Route::get('/conversations/create', "ConversationsController@create")->name('conversations.create');
+Route::get('/conversations/{id}', "ConversationsController@show")->name('conversations.show');
+
+Route::patch('/conversations/{id}/update', "ConversationsController@update")->name('conversations.update');
+Route::get('/conversations/{id}/edit', "ConversationsController@edit")->name('conversations.edit');
+
 
 
