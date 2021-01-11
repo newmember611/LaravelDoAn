@@ -21,7 +21,7 @@ $.ajaxSetup({
         direction: "ltr" //"ltr" = Left to Right; "rtl" = Right to Left
     });
 
-    $('button[name=deactivebutton]').click(function () {
+    $('button[name=deactivebutton]').on("click", function () {
         var id = ($(this).attr('data-id'));
         $.ajax({
             type: 'PATCH',  
@@ -43,7 +43,7 @@ $.ajaxSetup({
         })
     });
 
-    $('button[name=editbutton]').click(function (){
+    $('button[name=editbutton]').on("click", function (){
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var id = ($(this).attr('data-id'));
         var username = $('#username_'+id).val();
@@ -65,6 +65,7 @@ $.ajaxSetup({
                 $.notify("Success", "success" );
             }
         })
-    })
+    });
+
 
 })(jQuery);

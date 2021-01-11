@@ -116,7 +116,7 @@ class UserController extends Controller
         $item->Status = $request->Status;
         $item->update();
         // $info=["user"=>UserModel::find($id)];
-        return redirect()->route('user.index');
+        // return redirect()->route('user.index');
     }
 
     /**

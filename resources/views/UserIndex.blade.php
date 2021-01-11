@@ -89,7 +89,7 @@
                                                     <input value="{{$user['PhoneNumber']}}" type="text" id="phone_{{$user['id']}}" name="PhoneNumber" placeholder="Username" title="Please enter your First Name" required="">
                                                 </div>
                                                 <div class="form-control w3layouts"> 
-                                                    <input value="{{$user['Img']}}" type="text" id="img_{{$user['id']}}" name="Img" placeholder="Username" title="Please enter your First Name" required="">
+                                                    <input value="{{$user['Img']}}" type="text" id="img_{{$user['id']}}" name="Img" placeholder="Img" title="Please enter your First Name" required="">
                                                 </div>
                                                 <div class="form-control agileinfo">	
                                                     <input value="{{$user['Password']}}" type="password" class="lock" name="Password" placeholder="Password" id="pass_{{$user['id']}}" required="">
@@ -100,7 +100,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button name="editbutton" data-id="{{$user['id']}}" type="button" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
+                                                    <button name="editbutton" data-id="{{$user['id']}}" id="editbuttonid" type="button" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
                                                 </div>
                                                 </div>
                                             </div>
