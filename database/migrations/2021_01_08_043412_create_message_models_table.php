@@ -18,10 +18,12 @@ class CreateMessageModelsTable extends Migration
             $table->Integer('Sender_id');
             $table->Integer('Receiver_id'); 
             $table->text('Messenges');
+            $table->Integer('Conversations_id');
             $table->boolean('Status')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
+
     }
 
     /**

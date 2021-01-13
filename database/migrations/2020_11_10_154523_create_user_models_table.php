@@ -24,6 +24,11 @@ class CreateUserModelsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        Schema::table('user_model', function (Blueprint $table) {
+            
+            $table->foreign('id')->references('User_id')->on('user_has_conversations');            
+            });
     }
 
     /**

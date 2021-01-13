@@ -21,6 +21,12 @@ class Conversations extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        Schema::table('conversation', function (Blueprint $table) {
+            
+            $table->foreign('id')->references('Conversations_id')->on('user_has_conversations');   
+            $table->foreign('id')->references('Conversations_id')->on('message_models');                 
+            });
     }
 
     /**

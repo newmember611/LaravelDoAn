@@ -43,7 +43,7 @@
                                         <tbody>
                                         @foreach($user_models as $user)
                                         <tr>
-                                            <td>{{$user["id"]}}</td>
+                                            <td>{{$user->id}}</td>
                                             <td><a target="_blank" href="{{route('user.show', $user['id'])}}" style="color: #333">{{$user["Name"]}}</a> 
                                             </td>                                       
                                             <td>{{$user["Password"]}}</td>

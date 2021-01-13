@@ -37,6 +37,7 @@
                                                 <th>Sender_ID</th>
                                                 <th>Receiver_ID</th>
                                                 <th>Message</th>
+                                                <th>Conversations ID</th>
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
@@ -48,6 +49,7 @@
                                                 <td>{{$lstMessage["Sender_id"]}}</td>
                                                 <td>{{$lstMessage["Receiver_id"]}}</a></td>
                                                 <td>{{$lstMessage["Messenges"]}}</td>
+                                                <td>{{$lstMessage["Conversations_id"]}}</td>
                                                 <td>{{$lstMessage["Status"]}}</a></td>
                                                 
                                                 <td>
