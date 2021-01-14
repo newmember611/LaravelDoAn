@@ -20,6 +20,11 @@
         
     </div>
     <div class="col-md-8 mb-3">
+        <label for="validationCustom07">Conversation ID</label>
+        <input type="text" name="conversationID" class="form-control" id="validationCustom07" placeholder="Conversation ID" required>
+        
+    </div>
+    <div class="col-md-8 mb-3">
         <label for="validationCustom06">Status</label>
         <input type="number" name="status" min="0" max="1" class="form-control" id="validationCustom06" placeholder="Status" required>
         

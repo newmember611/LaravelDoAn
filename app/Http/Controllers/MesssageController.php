@@ -50,6 +50,7 @@ class MesssageController extends Controller
         $newRow->Sender_id = $request->senderID;
         $newRow->Receiver_id = $request->receiverID;
         $newRow->Messenges = $request->message;
+        $newRow->Conversations_id = $request->conversationID;
         $newRow->Status = $request->status;
         $newRow->save();
 
@@ -107,6 +108,7 @@ class MesssageController extends Controller
         $newRow->Sender_id = $request->senderID;
         $newRow->Receiver_id = $request->receiverID;
         $newRow->Messenges = $request->message;
+        $newRow->Conversations_id = $request->conversationID;
         $newRow->Status = $request->status;
         $newRow->save();
         if(!session()->has('data'))
