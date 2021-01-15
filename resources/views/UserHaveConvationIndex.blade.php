@@ -8,8 +8,17 @@
                 <div class="row page-titles">
                     <div class="col p-md-0">
                         <h4>UserBoard</h4>
+                       
                     </div>
-                    
+                    <?php
+                            $date = getdate();
+                            echo "<hr>";
+                            echo "Thứ    ".$date['weekday'];
+                            echo "  ".$date['mday'];
+                            echo "/".$date['mon'];
+                            echo "/".$date['year'];
+                            
+                        ?>
                     <div class="col p-md-0">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a>
@@ -26,6 +35,7 @@
                         <div class="card transparent-card">
                             <div class="card-header pb-0">
                                 <h4 class="card-title mt-2">UserHasConvation</h4>
+                                
                                 <a href="{{route('userhaveconvation.create')}}"><button type="submit" class="btn btn-outline-primary">Create</button></a>
                             </div>
                             <div class="card-body p-0">

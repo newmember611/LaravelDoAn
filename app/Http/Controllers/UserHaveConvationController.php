@@ -18,6 +18,7 @@ class UserHaveConvationController extends Controller
         return view('UserHaveConvationIndex', $data);
     }
 
+   
     /**
      * Show the form for creating a new resource.
      *
